@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ArrowRight, Check, Copy, Menu, X } from 'lucide-react';
+import { ArrowRight, CalendarDays, Calculator, Check, Copy, LockKeyhole, Menu, MessageCircle, Palette, ShoppingBag, X } from 'lucide-react';
 
 const services = [
   { number: '01', name: 'Business websites', line: 'Generate enquiries.', href: '/services/business-websites' },
@@ -13,6 +13,15 @@ const projects = [
   { name: 'Motion Only', type: 'Private web app', style: 'project-motion', href: '/work/motion-only', image: 'https://raw.githubusercontent.com/Jinnovate/MotionOnly/main/public/motion-only-logo-original.png', alt: 'Motion Only rising arrow mark' },
   { name: 'Lené', type: 'E-commerce', style: 'project-lene', href: '/work/lene', image: 'https://lene-active-everyday.realworldjoel.chatgpt.site/og.png', alt: 'Lené activewear campaign identity' },
   { name: 'Transport by AC', type: 'Transport', style: 'project-ac', href: '/work/ac-transport', image: 'https://transport-by-ac.realworldjoel.chatgpt.site/og.png', alt: 'Transport by AC vehicle transport campaign' },
+];
+
+const capabilities = [
+  { icon: MessageCircle, title: 'Website chat', text: 'Answer questions and guide visitors.' },
+  { icon: Palette, title: 'Personalisation', text: 'Themes, preferences and tailored content.' },
+  { icon: CalendarDays, title: 'Online bookings', text: 'Availability, appointments and confirmations.' },
+  { icon: ShoppingBag, title: 'Online selling', text: 'Products, baskets and secure checkout.' },
+  { icon: LockKeyhole, title: 'Member areas', text: 'Accounts, dashboards and private content.' },
+  { icon: Calculator, title: 'Instant quotes', text: 'Turn customer choices into clear prices.' },
 ];
 
 export default function Home() {
@@ -39,7 +48,7 @@ export default function Home() {
           <a href="#services" onClick={closeMenu}>Services</a>
           <a href="#work" onClick={closeMenu}>Work</a>
           <a href="#pricing" onClick={closeMenu}>Pricing</a>
-          <a href="#process" onClick={closeMenu}>Process</a>
+          <a href="#features" onClick={closeMenu}>Features</a>
         </nav>
         <a className="nav-cta" href="#contact">Start your dream <ArrowRight size={16} /></a>
         <button className="menu" onClick={() => setMenu(!menu)} aria-label="Toggle navigation" aria-expanded={menu}>{menu ? <X /> : <Menu />}</button>
@@ -70,6 +79,11 @@ export default function Home() {
       <section className="work" id="work">
         <div className="section-intro row"><div><p className="label">Selected work</p><h2>Three businesses.<br />Three personalities.</h2></div><p>Every build is shaped around the business, the audience and the person behind it.</p></div>
         <div className="project-grid">{projects.map((project, i) => <a className={`project ${project.style}`} href={project.href} key={project.name}><div className="project-meta"><span>0{i + 1}</span><span>{project.type}</span></div><div className="project-art"><img src={project.image} alt={project.alt} loading="lazy" /></div><div className="project-copy"><h3>{project.name}</h3><span>View project ↗</span></div></a>)}</div>
+      </section>
+
+      <section className="feature-showcase" id="features">
+        <div className="section-intro row"><div><p className="label">Feature playground</p><h2>More than a<br />good-looking site.</h2></div><p>Try the colour switcher and chat. These are examples of the useful tools I can build around a business.</p></div>
+        <div className="capability-grid">{capabilities.map(({ icon: Icon, title, text }, index) => <article key={title}><div><span>0{index + 1}</span><Icon size={21} /></div><h3>{title}</h3><p>{text}</p>{index < 2 && <small>LIVE DEMO</small>}</article>)}</div>
       </section>
 
       <section className="pricing" id="pricing">
