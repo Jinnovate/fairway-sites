@@ -13,6 +13,11 @@ const faqs = [
   ['What running costs will I pay?', 'You pay hosting, domain and any third-party services directly at cost. I do not add a hidden monthly markup.'],
   ['What happens after launch?', 'You own the finished site. Choose a care plan if you want ongoing improvements, or take it away with a clean handover.'],
 ];
+const method = [
+  ['01', 'Find the friction', 'We identify the one thing stopping more people from buying, booking or getting in touch.'],
+  ['02', 'Make the path obvious', 'Every page, line and button earns its place by moving the right customer forward.'],
+  ['03', 'Put it in the world', 'No endless reveal cycle. We launch a sharp first version, then improve it with real evidence.'],
+];
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -24,7 +29,7 @@ export default function Home() {
 
   return <main>
     <header className="site-header">
-      <a className="brand" href="#top" aria-label="Fairway Sites home"><span className="brand-mark">F/</span> FAIRWAY</a>
+      <a className="brand" href="#top" aria-label="Fairway Sites home"><span className="brand-mark">JG</span><span>FAIRWAY<small>BY JOEL GILBERT</small></span></a>
       <nav className={menuOpen ? 'nav open' : 'nav'} aria-label="Main navigation"><a href="#work" onClick={()=>setMenuOpen(false)}>Work</a><a href="#approach" onClick={()=>setMenuOpen(false)}>How it works</a><a href="#pricing" onClick={()=>setMenuOpen(false)}>Pricing</a></nav>
       <a className="header-cta" href="#contact">Start a project <ArrowRight size={16}/></a>
       <button className="menu-button" onClick={()=>setMenuOpen(!menuOpen)} aria-label="Toggle menu">{menuOpen?<X/>:<Menu/>}</button>
@@ -39,6 +44,13 @@ export default function Home() {
 
     <section className="manifesto" id="approach"><span className="rubber-stamp">THE FAIR DEAL</span><p className="section-kicker">A better deal</p><h2>Your website should make money.<br/>The pricing should make sense.</h2><div className="manifesto-grid"><p>Traditional agencies load the price with meetings, offices and layers of account management. I keep the work close, the process lean and the outcome commercially focused.</p><div className="principles"><span><b>01</b> Start with the sale</span><span><b>02</b> Design with a reason</span><span><b>03</b> Launch, learn, improve</span></div></div></section>
 
+    <section className="founder-section">
+      <div className="founder-mark" aria-hidden="true"><span>JG</span><i>Built by the person<br/>you actually speak to.</i></div>
+      <div className="founder-copy"><p className="section-kicker">A note from Joel</p><h2>Built beside you.<br/><em>Never sold at you.</em></h2><p>I started Fairway because a good business shouldn&apos;t need an agency-sized budget to look the part online. You deal directly with me—from the first rough idea to the day we press publish.</p><blockquote>“If it doesn&apos;t help the customer decide, it doesn&apos;t make the page.”<cite>— My rule for every build</cite></blockquote></div>
+    </section>
+
+    <section className="method-section"><div className="method-heading"><p className="section-kicker">The Fairway Method™</p><h2>Three moves.<br/>No theatre.</h2><span className="method-seal">CLEAR<br/>QUICK<br/>FAIR</span></div><div className="method-list">{method.map(([number,title,copy])=><article key={number}><span>{number}</span><h3>{title}</h3><p>{copy}</p></article>)}</div></section>
+
     <section className="work-section" id="work"><div className="section-heading"><div><p className="section-kicker">Selected directions</p><h2>Small sites.<br/>Serious presence.</h2></div><p>Three examples of how a focused website can give a business its own unmistakable character.</p></div><div className="work-grid">{work.map((item,index)=><article className={`work-card ${item.className}`} key={item.name}><div className="work-top"><span>0{index+1}</span><span>{item.type}</span></div><div className="work-visual"><span className="sample-logo">{item.name}</span><i className="shape"/></div><div className="work-caption"><h3>{item.name}</h3><p>{item.note}</p></div></article>)}</div></section>
 
     <section className="pricing" id="pricing"><div className="pricing-intro"><p className="section-kicker">Ways to work together</p><h2>Pick the deal that fits.</h2><p>No mystery quotes. No compulsory retainer. Just two sensible ways to get a high-quality site live.</p></div><div className="pricing-grid">
@@ -49,6 +61,6 @@ export default function Home() {
     <section className="faq-section"><div><p className="section-kicker">Good questions</p><h2>Nothing hidden<br/>in the small print.</h2></div><div className="faqs">{faqs.map(([q,a],i)=><div className="faq" key={q}><button onClick={()=>setOpenFaq(openFaq===i?null:i)} aria-expanded={openFaq===i}><span>{q}</span><ChevronDown className={openFaq===i?'rotate':''}/></button>{openFaq===i&&<p>{a}</p>}</div>)}</div></section>
 
     <section className="contact" id="contact"><span className="contact-burst">LET&apos;S<br/>MAKE<br/>IT WORK</span><p className="section-kicker">Your move</p><h2>Tell me what the site<br/><em>needs to do.</em></h2><p>Not how many pages. Not which trendy animation. Start with the business goal and we’ll work out the smartest version together.</p><div className="contact-actions"><button className="button lime" onClick={copyBrief}>{copied?<><Check/> Brief copied</>:<><Copy/> Copy a project brief</>}</button><span>Selected: <b>{plan}</b></span></div></section>
-    <footer><a className="brand" href="#top"><span className="brand-mark">F/</span> FAIRWAY</a><p>Websites with a fairer way to pay.</p><a href="#top">Back to top ↑</a></footer>
+    <footer><a className="brand" href="#top"><span className="brand-mark">JG</span><span>FAIRWAY<small>BY JOEL GILBERT</small></span></a><p>Personally designed. Fairly priced. Properly yours.</p><a href="#top">Back to top ↑</a></footer>
   </main>;
 }
