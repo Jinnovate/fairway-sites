@@ -1,0 +1,6 @@
+import DetailPage from '../../components/DetailPage';
+
+export default function Lene() {
+  return <DetailPage eyebrow="E-commerce / Activewear" title="Lené" intro="A feminine activewear shop that carries the founder’s playful, style-led personality from the studio into everyday life." accent="orange" image="https://lene-active-everyday.realworldjoel.chatgpt.site/og.png" imageAlt="Lené activewear campaign identity" liveUrl="https://lene-active-everyday.realworldjoel.chatgpt.site" sections={[{ title: 'The personality', body: 'Soft, confident and knowingly cute. The brand speaks to customers who care as much about the coffee run and personal style as the workout itself.' }, { title: 'The build', body: 'An editorial storefront with collection browsing, product options, a persistent basket, responsive shopping journeys and a founder story.' }, { title: 'The difference', body: 'Warm photography, fashion-led typography and conversational product names make the shop feel like Lené—not a standard e-commerce template.' }]} included={['Brand and campaign direction', 'Editorial homepage', 'Product catalogue', 'Product detail journeys', 'Basket experience', 'Founder story']} note="A complete commerce concept showing how the owner’s taste and tone can shape every part of an online shop." />;
+}
+
