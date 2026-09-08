@@ -14,6 +14,7 @@
 .contact{text-align:left}.contact-heading{text-align:center}.contact-heading>p:last-child{font-size:1.1rem;max-width:650px;margin:30px auto 45px}
 .enquiry-form{width:min(860px,100%);margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:22px;text-align:left}
 .enquiry-form label{display:flex;flex-direction:column;gap:8px;font-size:.78rem;font-weight:800}
+.enquiry-form .optional{font-size:.72rem;font-weight:400;color:#d9ddff;margin-top:-4px}
 .enquiry-form input,.enquiry-form select,.enquiry-form textarea{width:100%;border:1px solid white;background:white;color:var(--ink);border-radius:0;padding:14px;font:inherit}
 .enquiry-form textarea{resize:vertical}.enquiry-form input:focus,.enquiry-form select:focus,.enquiry-form textarea:focus{outline:3px solid var(--lime);outline-offset:2px}
 .full{grid-column:1/-1}.form-actions{display:flex;align-items:center;gap:22px;flex-wrap:wrap}.submit-button{background:var(--lime);color:var(--ink);box-shadow:4px 4px 0 var(--ink)}
