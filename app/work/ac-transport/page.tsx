@@ -1,0 +1,6 @@
+import DetailPage from '../../components/DetailPage';
+
+export default function ACTransport() {
+  return <DetailPage eyebrow="Business website / Transport" title="Transport by AC" intro="A direct, high-impact transport website built around reliability, fast answers and a no-nonsense owner-operated service." accent="blue" image="https://transport-by-ac.realworldjoel.chatgpt.site/og.png" imageAlt="Transport by AC vehicle transport campaign" liveUrl="https://transport-by-ac.realworldjoel.chatgpt.site" sections={[{ title: 'The personality', body: 'Straight-talking, dependable and ready to move. The words and visual identity reflect an owner who values action over unnecessary complication.' }, { title: 'The build', body: 'A responsive service website with clear coverage, trust information, quote capture and a booking journey for local and nationwide work.' }, { title: 'The difference', body: 'Bold typography, road-inspired details and night transport imagery make the business immediately recognisable while keeping the route to a quote simple.' }]} included={['Positioning and copy', 'Distinctive visual identity', 'Responsive service website', 'Quote and booking journeys', 'Mileage pricing logic', 'Vehicle and postcode checks']} note="A real service-business build designed to turn an owner’s practical working style into a confident customer experience." />;
+}
+
