@@ -48,7 +48,7 @@ export default function Home() {
           <a href="#services" onClick={closeMenu}>Services</a>
           <a href="#work" onClick={closeMenu}>Work</a>
           <a href="#pricing" onClick={closeMenu}>Pricing</a>
-          <a href="#features" onClick={closeMenu}>Features</a>
+          <a href="/features" onClick={closeMenu}>Features</a>
         </nav>
         <a className="nav-cta" href="#contact">Start your dream <ArrowRight size={16} /></a>
         <button className="menu" onClick={() => setMenu(!menu)} aria-label="Toggle navigation" aria-expanded={menu}>{menu ? <X /> : <Menu />}</button>
@@ -82,7 +82,7 @@ export default function Home() {
       </section>
 
       <section className="feature-showcase" id="features">
-        <div className="section-intro row"><div><p className="label">Feature playground</p><h2>More than a<br />good-looking site.</h2></div><p>Try the colour switcher and chat. These are examples of the useful tools I can build around a business.</p></div>
+        <div className="section-intro row"><div><p className="label">Feature playground</p><h2>More than a<br />good-looking site.</h2></div><div className="feature-intro-action"><p>Try the colour switcher and chat, then explore ten interactive examples of what your website could do.</p><a href="/features">Explore all features <ArrowRight size={16} /></a></div></div>
         <div className="capability-grid">{capabilities.map(({ icon: Icon, title, text }, index) => <article key={title}><div><span>0{index + 1}</span><Icon size={21} /></div><h3>{title}</h3><p>{text}</p>{index < 2 && <small>LIVE DEMO</small>}</article>)}</div>
       </section>
 
@@ -109,7 +109,7 @@ export default function Home() {
         </form>
       </section>
 
-      <footer><a className="logo" href="#top"><b>DF</b><span>DREAM FIRST<small>WEBSITES + APPS BY JOEL</small></span></a><p>Dream first. Build smart.</p><div className="footer-links"><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#contact">Enquire</a><a href="#top">Top ↑</a></div></footer>
+      <footer><a className="logo" href="#top"><b>DF</b><span>DREAM FIRST<small>WEBSITES + APPS BY JOEL</small></span></a><p>Dream first. Build smart.</p><div className="footer-links"><a href="#services">Services</a><a href="/features">Features</a><a href="#pricing">Pricing</a><a href="#contact">Enquire</a><a href="#top">Top ↑</a></div></footer>
     </main>
   );
 }
