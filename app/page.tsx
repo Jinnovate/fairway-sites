@@ -36,7 +36,7 @@ export default function Home() {
     </header>
 
     <section className="hero" id="top">
-      <div className="hero-copy"><p className="eyebrow"><Sparkles size={14}/> Websites for independent businesses</p><h1>Big-agency thinking.<br/><em>Without the big-agency bill.</em></h1><p className="hero-lede">Sharp, useful websites built to earn their keep. Pay a fair fixed price—or choose a lower start-up cost and let me win when you do.</p><div className="hero-actions"><a className="button primary" href="#pricing">See the honest pricing <ArrowRight size={17}/></a><a className="text-link" href="#work">View selected work</a></div><div className="proof-line"><span><Check size={15}/> You own the site</span><span><Check size={15}/> No hosting markup</span><span><Check size={15}/> Clear scope, clear price</span></div></div>
+      <div className="hero-copy"><p className="eyebrow"><Sparkles size={14}/> Bring the idea. I&apos;ll bring it to life.</p><h1>That idea in your head?<br/><em>Let&apos;s put it in the world.</em></h1><p className="hero-lede">You don&apos;t need a perfect brief. Bring the scribble, the voice note or the “what if?”—I&apos;ll turn it into a sharp website people can understand, trust and buy from.</p><div className="hero-actions"><a className="button primary" href="#contact">Bring me your idea <ArrowRight size={17}/></a><a className="text-link" href="#pricing">See the honest pricing</a></div><div className="proof-line"><span><Check size={15}/> You own the site</span><span><Check size={15}/> No hosting markup</span><span><Check size={15}/> Clear scope, clear price</span></div></div>
       <div className="hero-art" aria-label="A preview of a modern website project"><div className="retro-sun"/><div className="orbit orbit-one"/><div className="orbit orbit-two"/><span className="edition-stamp">WEB<br/>EDITION<br/><b>№ 01</b></span><div className="browser-card"><div className="browser-bar"><i/><i/><i/><span>yourbusiness.co.uk</span></div><div className="mock-nav"><b>STUDIO</b><span>Work &nbsp; About &nbsp; Contact</span></div><div className="mock-body"><small>BUILDING BETTER SPACES</small><strong>Make room<br/>for <i>living.</i></strong><button>Explore projects ↗</button></div><div className="result-pill"><b>+38%</b><span>more enquiries</span></div></div><span className="scribble">Built to convert, not just sit there.</span></div>
     </section>
 
@@ -47,6 +47,15 @@ export default function Home() {
     <section className="founder-section">
       <div className="founder-mark" aria-hidden="true"><span>JG</span><i>Built by the person<br/>you actually speak to.</i></div>
       <div className="founder-copy"><p className="section-kicker">A note from Joel</p><h2>Built beside you.<br/><em>Never sold at you.</em></h2><p>I started Fairway because a good business shouldn&apos;t need an agency-sized budget to look the part online. You deal directly with me—from the first rough idea to the day we press publish.</p><blockquote>“If it doesn&apos;t help the customer decide, it doesn&apos;t make the page.”<cite>— My rule for every build</cite></blockquote></div>
+    </section>
+
+    <section className="idea-section">
+      <div className="idea-intro"><p className="section-kicker">Start before it&apos;s perfect</p><h2>You bring the<br/><span>“what if?”</span></h2><p>A business name on a napkin. A service you know people need. A shop that only exists in your notes app. That&apos;s enough to begin.</p><a className="button idea-button" href="#contact">Make it real <ArrowRight size={17}/></a></div>
+      <div className="idea-machine" aria-label="An idea becoming a live website">
+        <article className="idea-card rough"><small>01 / THE SPARK</small><strong>“What if I<br/>could sell this?”</strong><span>✎ rough is welcome</span></article>
+        <div className="idea-arrow"><span>→</span><small>JOEL MAKES<br/>IT CLICK</small></div>
+        <article className="idea-card live"><small>03 / OUT IN THE WORLD</small><div className="mini-site"><b>YOUR THING™</b><p>A clear reason to care.</p><i>Buy / Book / Begin →</i></div><span className="live-light">● LIVE</span></article>
+      </div>
     </section>
 
     <section className="method-section"><div className="method-heading"><p className="section-kicker">The Fairway Method™</p><h2>Three moves.<br/>No theatre.</h2><span className="method-seal">CLEAR<br/>QUICK<br/>FAIR</span></div><div className="method-list">{method.map(([number,title,copy])=><article key={number}><span>{number}</span><h3>{title}</h3><p>{copy}</p></article>)}</div></section>
@@ -60,7 +69,7 @@ export default function Home() {
 
     <section className="faq-section"><div><p className="section-kicker">Good questions</p><h2>Nothing hidden<br/>in the small print.</h2></div><div className="faqs">{faqs.map(([q,a],i)=><div className="faq" key={q}><button onClick={()=>setOpenFaq(openFaq===i?null:i)} aria-expanded={openFaq===i}><span>{q}</span><ChevronDown className={openFaq===i?'rotate':''}/></button>{openFaq===i&&<p>{a}</p>}</div>)}</div></section>
 
-    <section className="contact" id="contact"><span className="contact-burst">LET&apos;S<br/>MAKE<br/>IT WORK</span><p className="section-kicker">Your move</p><h2>Tell me what the site<br/><em>needs to do.</em></h2><p>Not how many pages. Not which trendy animation. Start with the business goal and we’ll work out the smartest version together.</p><div className="contact-actions"><button className="button lime" onClick={copyBrief}>{copied?<><Check/> Brief copied</>:<><Copy/> Copy a project brief</>}</button><span>Selected: <b>{plan}</b></span></div></section>
+    <section className="contact" id="contact"><span className="contact-burst">LET&apos;S<br/>MAKE<br/>IT REAL</span><p className="section-kicker">Your idea starts here</p><h2>Bring me the thought.<br/><em>We&apos;ll build the thing.</em></h2><p>No polished brief required. Tell me what you want to put into the world, who it is for and what you want to happen next.</p><div className="contact-actions"><button className="button lime" onClick={copyBrief}>{copied?<><Check/> Idea brief copied</>:<><Copy/> Copy an idea starter</>}</button><span>Selected: <b>{plan}</b></span></div></section>
     <footer><a className="brand" href="#top"><span className="brand-mark">JG</span><span>FAIRWAY<small>BY JOEL GILBERT</small></span></a><p>Personally designed. Fairly priced. Properly yours.</p><a href="#top">Back to top ↑</a></footer>
   </main>;
 }
