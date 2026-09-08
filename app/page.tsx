@@ -34,23 +34,23 @@ export default function Home() {
   return (
     <main id="top">
       <header>
-        <a className="logo" href="#top" onClick={closeMenu}><b>JG</b><span>FAIRWAY<small>WEBSITES BY JOEL</small></span></a>
+        <a className="logo" href="#top" onClick={closeMenu}><b>DF</b><span>DREAM FIRST<small>WEBSITES + APPS BY JOEL</small></span></a>
         <nav className={menu ? 'open' : ''} aria-label="Main navigation">
           <a href="#services" onClick={closeMenu}>Services</a>
           <a href="#work" onClick={closeMenu}>Work</a>
           <a href="#pricing" onClick={closeMenu}>Pricing</a>
           <a href="#process" onClick={closeMenu}>Process</a>
         </nav>
-        <a className="nav-cta" href="#contact">Start a project <ArrowRight size={16} /></a>
+        <a className="nav-cta" href="#contact">Start your dream <ArrowRight size={16} /></a>
         <button className="menu" onClick={() => setMenu(!menu)} aria-label="Toggle navigation" aria-expanded={menu}>{menu ? <X /> : <Menu />}</button>
       </header>
 
       <section className="hero">
         <div className="hero-copy">
-          <p className="label">Websites for small businesses</p>
-          <h1>Bring your idea<br /><em>to life.</em></h1>
-          <p className="lead">Clear, professional websites designed to generate sales, bookings and enquiries—without the agency price.</p>
-          <div className="actions"><a className="button primary" href="#contact">Start a project <ArrowRight size={17} /></a><a className="plain-link" href="#pricing">From £695</a></div>
+          <p className="label">Websites + apps by Joel</p>
+          <h1>Your dream<br /><em>deserves a start.</em></h1>
+          <p className="lead">Clear, professional websites and apps built to generate sales, bookings and enquiries—without the agency price.</p>
+          <div className="actions"><a className="button primary" href="#contact">Start your dream <ArrowRight size={17} /></a><a className="plain-link" href="#pricing">From £695</a></div>
           <div className="assurances"><span><Check /> You own it</span><span><Check /> No hosting markup</span></div>
         </div>
         <div className="hero-example">
@@ -80,10 +80,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="process" id="process"><div className="process-title"><p className="label">Process</p><h2>Idea to live site.</h2></div><div className="steps"><article><b>01</b><div><h3>Plan</h3><p>Goal, audience and offer.</p></div></article><article><b>02</b><div><h3>Build</h3><p>Design, content and development.</p></div></article><article><b>03</b><div><h3>Launch</h3><p>Go live and improve.</p></div></article></div></section>
+      <section className="process" id="process"><div className="process-title"><p className="label">Process</p><h2>Dream to launch.</h2></div><div className="steps"><article><b>01</b><div><h3>Plan</h3><p>Goal, audience and offer.</p></div></article><article><b>02</b><div><h3>Build</h3><p>Design, content and development.</p></div></article><article><b>03</b><div><h3>Launch</h3><p>Go live and improve.</p></div></article></div></section>
 
       <section className="contact" id="contact">
-        <div className="contact-heading"><p className="label">Start here</p><h2>What are we building?</h2><p>Tell me the essentials. I’ll reply with a clear next step.</p></div>
+        <div className="contact-heading"><p className="label">Start here</p><h2>What are you dreaming up?</h2><p>Tell me the essentials. I’ll reply with a clear next step.</p></div>
         <form className="enquiry-form" name="project-enquiry" method="POST" action="/thanks" data-netlify="true">
           <input type="hidden" name="form-name" value="project-enquiry" />
           <label>Your name<input name="name" type="text" autoComplete="name" required /></label>
@@ -95,7 +95,8 @@ export default function Home() {
         </form>
       </section>
 
-      <footer><a className="logo" href="#top"><b>JG</b><span>FAIRWAY<small>WEBSITES BY JOEL</small></span></a><p>Clear websites. Fair prices.</p><div className="footer-links"><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#contact">Enquire</a><a href="#top">Top ↑</a></div></footer>
+      <footer><a className="logo" href="#top"><b>DF</b><span>DREAM FIRST<small>WEBSITES + APPS BY JOEL</small></span></a><p>Dream first. Build smart.</p><div className="footer-links"><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#contact">Enquire</a><a href="#top">Top ↑</a></div></footer>
     </main>
   );
 }
+
