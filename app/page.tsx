@@ -10,9 +10,9 @@ const services = [
 ];
 
 const projects = [
-  { name: 'North & Pine', type: 'Services', style: 'project-a', href: '/work/north-and-pine' },
-  { name: 'After Hours', type: 'Hospitality', style: 'project-b', href: '/work/after-hours' },
-  { name: 'Field Notes', type: 'E-commerce', style: 'project-c', href: '/work/field-notes' },
+  { name: 'Motion Only', type: 'Private web app', style: 'project-motion', href: '/work/motion-only', image: 'https://raw.githubusercontent.com/Jinnovate/MotionOnly/main/public/motion-only-logo-original.png', alt: 'Motion Only rising arrow mark' },
+  { name: 'Lené', type: 'E-commerce', style: 'project-lene', href: '/work/lene', image: 'https://lene-active-everyday.realworldjoel.chatgpt.site/og.png', alt: 'Lené activewear campaign identity' },
+  { name: 'Transport by AC', type: 'Transport', style: 'project-ac', href: '/work/ac-transport', image: 'https://transport-by-ac.realworldjoel.chatgpt.site/og.png', alt: 'Transport by AC vehicle transport campaign' },
 ];
 
 export default function Home() {
@@ -68,8 +68,8 @@ export default function Home() {
       </section>
 
       <section className="work" id="work">
-        <div className="section-intro row"><div><p className="label">Selected directions</p><h2>Built for the business.</h2></div><p>Concept work showing how a clear idea can become a distinctive, useful website.</p></div>
-        <div className="project-grid">{projects.map((project, i) => <a className={`project ${project.style}`} href={project.href} key={project.name}><div className="project-meta"><span>0{i + 1}</span><span>{project.type}</span></div><div className="project-art"><strong>{project.name}</strong><i /></div><div className="project-copy"><h3>{project.name}</h3><span>View direction ↗</span></div></a>)}</div>
+        <div className="section-intro row"><div><p className="label">Selected work</p><h2>Three businesses.<br />Three personalities.</h2></div><p>Every build is shaped around the business, the audience and the person behind it.</p></div>
+        <div className="project-grid">{projects.map((project, i) => <a className={`project ${project.style}`} href={project.href} key={project.name}><div className="project-meta"><span>0{i + 1}</span><span>{project.type}</span></div><div className="project-art"><img src={project.image} alt={project.alt} loading="lazy" /></div><div className="project-copy"><h3>{project.name}</h3><span>View project ↗</span></div></a>)}</div>
       </section>
 
       <section className="pricing" id="pricing">
