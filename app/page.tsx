@@ -104,6 +104,7 @@ export default function Home() {
           <label>Email<input name="email" type="email" autoComplete="email" required /></label>
           <label>What do you need?<select name="project-type" value={plan} onChange={(event) => setPlan(event.target.value)}><option>Fixed price</option><option>Growth partnership</option><option>Not sure yet</option></select></label>
           <label>Business or idea<input name="business" type="text" required /></label>
+          <label className="full">Social media <span className="optional">Optional — share any profiles that show your business personality</span><input name="social-media" type="text" inputMode="url" placeholder="Instagram, TikTok, Facebook, LinkedIn or another profile" /></label>
           <label className="full">A few details<textarea name="brief" rows={5} placeholder="What do you sell, who is it for, and what should the website help them do?" required /></label>
           <div className="form-actions full"><button className="button submit-button" type="submit">Send project enquiry <ArrowRight size={17} /></button><button className="idea-button" type="button" onClick={copyIdea}>{copied ? <><Check /> Copied</> : <><Copy /> Copy idea starter</>}</button><span className="sr-status" aria-live="polite">{copied ? 'Idea starter copied' : ''}</span></div>
         </form>
