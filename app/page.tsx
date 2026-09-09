@@ -92,6 +92,30 @@ export default function Home() {
           <article className="price-card"><p className="plan">Fixed price</p><h3>Pay once.<br />Own it.</h3><div className="amount"><small>from</small> £695</div><ul><li><Check />Strategy</li><li><Check />Design and build</li><li><Check />Launch and handover</li></ul><button type="button" onClick={() => choose('Fixed price')}>Choose fixed price <ArrowRight /></button></article>
           <article className="price-card inverse"><p className="plan">Growth partnership</p><h3>Lower cost.<br />Shared upside.</h3><div className="amount"><small>from</small> £195 <i>+ 1%</i></div><ul><li><Check />Full website</li><li><Check />12 months of improvements</li><li><Check />Agreed fee cap</li></ul><button type="button" onClick={() => choose('Growth partnership')}>Explore partnership <ArrowRight /></button></article>
         </div>
+        <div className="pricing-breakdown">
+          <div className="breakdown-heading"><p className="label">How it works</p><h3>A fair deal,<br />clearly explained.</h3><p>Every project is agreed in writing before work starts. No surprise charges and no markup on your running costs.</p></div>
+          <div className="breakdown-options">
+            <article>
+              <div className="breakdown-title"><span>01</span><div><small>FIXED PRICE</small><h4>You pay once. The finished site is yours.</h4></div></div>
+              <dl>
+                <div><dt>You pay</dt><dd>From £695, split into agreed project payments.</dd></div>
+                <div><dt>You get</dt><dd>Planning, a custom design, the complete build, mobile optimisation, launch and handover.</dd></div>
+                <div><dt>I get</dt><dd>The agreed project fee for designing, building and launching your site.</dd></div>
+                <div><dt>After launch</dt><dd>You own the website. Future changes can be quoted separately whenever you need them.</dd></div>
+              </dl>
+            </article>
+            <article className="partnership-breakdown">
+              <div className="breakdown-title"><span>02</span><div><small>GROWTH PARTNERSHIP</small><h4>Less upfront. We share in the result.</h4></div></div>
+              <dl>
+                <div><dt>You pay</dt><dd>From £195 upfront, then 1% of sales processed through the website for 12 months.</dd></div>
+                <div><dt>You get</dt><dd>The full website, launch support and ongoing improvements during the 12-month partnership.</dd></div>
+                <div><dt>I get</dt><dd>The setup payment plus the agreed 1% share. A clear maximum fee is set before we begin.</dd></div>
+                <div><dt>After 12 months</dt><dd>The percentage ends and the website remains yours. We can agree new support only if you want it.</dd></div>
+              </dl>
+            </article>
+          </div>
+          <aside className="running-cost-note"><b>What you pay directly</b><p>Your domain, hosting, payment-processing fees and any paid third-party services remain in your name. I don’t add a markup to them.</p><small>Final scope, payment stages, percentage terms and fee cap are confirmed in your written proposal.</small></aside>
+        </div>
       </section>
 
       <section className="process" id="process"><div className="process-title"><p className="label">Process</p><h2>Dream to launch.</h2></div><div className="steps"><article><b>01</b><div><h3>Plan</h3><p>Goal, audience and offer.</p></div></article><article><b>02</b><div><h3>Build</h3><p>Design, content and development.</p></div></article><article><b>03</b><div><h3>Launch</h3><p>Go live and improve.</p></div></article></div></section>
