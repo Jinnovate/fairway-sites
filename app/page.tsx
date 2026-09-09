@@ -27,12 +27,18 @@ const capabilities = [
 export default function Home() {
   const [menu, setMenu] = useState(false);
   const [plan, setPlan] = useState('Fixed price');
+  const [expandedPlan, setExpandedPlan] = useState<'Fixed price' | 'Growth partnership' | null>(null);
   const [copied, setCopied] = useState(false);
 
   const closeMenu = () => setMenu(false);
   const choose = (value: string) => {
     setPlan(value);
     document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
+  const explorePlan = (value: 'Fixed price' | 'Growth partnership') => {
+    setPlan(value);
+    setExpandedPlan((current) => current === value ? null : value);
+    window.setTimeout(() => document.querySelector('#pricing-details')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 80);
   };
   const copyIdea = async () => {
     await navigator.clipboard.writeText(`Website idea — ${plan}\n\nBusiness:\nAudience:\nMain goal:\nLaunch date:`);
@@ -89,33 +95,19 @@ export default function Home() {
       <section className="pricing" id="pricing">
         <div className="section-intro"><p className="label">Pricing</p><h2>Simple and transparent.</h2></div>
         <div className="price-grid">
-          <article className="price-card"><p className="plan">Fixed price</p><h3>Pay once.<br />Own it.</h3><div className="amount"><small>from</small> £695</div><ul><li><Check />Strategy</li><li><Check />Design and build</li><li><Check />Launch and handover</li></ul><button type="button" onClick={() => choose('Fixed price')}>Choose fixed price <ArrowRight /></button></article>
-          <article className="price-card inverse"><p className="plan">Growth partnership</p><h3>Lower cost.<br />Shared upside.</h3><div className="amount"><small>from</small> £195 <i>+ 1%</i></div><ul><li><Check />Full website</li><li><Check />12 months of improvements</li><li><Check />Agreed fee cap</li></ul><button type="button" onClick={() => choose('Growth partnership')}>Explore partnership <ArrowRight /></button></article>
+          <article className="price-card"><p className="plan">Fixed price</p><h3>Pay once.<br />Own it.</h3><div className="amount"><small>from</small> £695</div><ul><li><Check />Strategy</li><li><Check />Design and build</li><li><Check />Launch and handover</li></ul><button type="button" onClick={() => explorePlan('Fixed price')} aria-expanded={expandedPlan === 'Fixed price'} aria-controls="pricing-details">Explore fixed price <ArrowRight /></button></article>
+          <article className="price-card inverse"><p className="plan">Growth partnership</p><h3>Lower cost.<br />Shared upside.</h3><div className="amount"><small>from</small> £195 <i>+ 1%</i></div><ul><li><Check />Full website</li><li><Check />12 months of improvements</li><li><Check />Agreed fee cap</li></ul><button type="button" onClick={() => explorePlan('Growth partnership')} aria-expanded={expandedPlan === 'Growth partnership'} aria-controls="pricing-details">Explore partnership <ArrowRight /></button></article>
         </div>
-        <div className="pricing-breakdown">
-          <div className="breakdown-heading"><p className="label">How it works</p><h3>A fair deal,<br />clearly explained.</h3><p>Every project is agreed in writing before work starts. No surprise charges and no markup on your running costs.</p></div>
-          <div className="breakdown-options">
-            <article>
-              <div className="breakdown-title"><span>01</span><div><small>FIXED PRICE</small><h4>You pay once. The finished site is yours.</h4></div></div>
-              <dl>
-                <div><dt>You pay</dt><dd>From £695, split into agreed project payments.</dd></div>
-                <div><dt>You get</dt><dd>Planning, a custom design, the complete build, mobile optimisation, launch and handover.</dd></div>
-                <div><dt>I get</dt><dd>The agreed project fee for designing, building and launching your site.</dd></div>
-                <div><dt>After launch</dt><dd>You own the website. Future changes can be quoted separately whenever you need them.</dd></div>
-              </dl>
-            </article>
-            <article className="partnership-breakdown">
-              <div className="breakdown-title"><span>02</span><div><small>GROWTH PARTNERSHIP</small><h4>Less upfront. We share in the result.</h4></div></div>
-              <dl>
-                <div><dt>You pay</dt><dd>From £195 upfront, then 1% of sales processed through the website for 12 months.</dd></div>
-                <div><dt>You get</dt><dd>The full website, launch support and ongoing improvements during the 12-month partnership.</dd></div>
-                <div><dt>I get</dt><dd>The setup payment plus the agreed 1% share. A clear maximum fee is set before we begin.</dd></div>
-                <div><dt>After 12 months</dt><dd>The percentage ends and the website remains yours. We can agree new support only if you want it.</dd></div>
-              </dl>
-            </article>
+        {expandedPlan && <div className={`pricing-details ${expandedPlan === 'Growth partnership' ? 'partnership-details' : ''}`} id="pricing-details" role="region" aria-live="polite">
+          <div className="pricing-details-top"><div><p className="label">How it works</p><h3>{expandedPlan === 'Fixed price' ? 'Fixed price, clearly explained.' : 'A partnership with shared upside.'}</h3></div><button type="button" className="details-close" onClick={() => setExpandedPlan(null)} aria-label="Close pricing details"><X /></button></div>
+          <div className="pricing-detail-grid">
+            <article><small>You pay</small><p>{expandedPlan === 'Fixed price' ? 'From £695, split into agreed project payments.' : 'From £195 upfront, then 1% of sales processed through the website for 12 months.'}</p></article>
+            <article><small>You get</small><p>{expandedPlan === 'Fixed price' ? 'Planning, custom design, the complete build, mobile optimisation, launch and handover.' : 'The full website, launch support and ongoing improvements during the 12-month partnership.'}</p></article>
+            <article><small>I get</small><p>{expandedPlan === 'Fixed price' ? 'The agreed project fee for designing, building and launching your site.' : 'The setup payment plus the agreed 1% share, with a clear maximum fee set before we begin.'}</p></article>
+            <article><small>{expandedPlan === 'Fixed price' ? 'After launch' : 'After 12 months'}</small><p>{expandedPlan === 'Fixed price' ? 'You own the website. Future changes can be quoted separately whenever you need them.' : 'The percentage ends and the website remains yours. We agree new support only if you want it.'}</p></article>
           </div>
-          <aside className="running-cost-note"><b>What you pay directly</b><p>Your domain, hosting, payment-processing fees and any paid third-party services remain in your name. I don’t add a markup to them.</p><small>Final scope, payment stages, percentage terms and fee cap are confirmed in your written proposal.</small></aside>
-        </div>
+          <aside className="pricing-detail-note"><div><b>Running costs stay in your name.</b><p>Domain, hosting, payment-processing fees and paid third-party services are paid directly by you, with no markup from me.</p><small>Final scope, payment stages, percentage terms and any fee cap are confirmed in your written proposal.</small></div><button type="button" className="button" onClick={() => choose(expandedPlan)}>Enquire about this option <ArrowRight /></button></aside>
+        </div>}
       </section>
 
       <section className="process" id="process"><div className="process-title"><p className="label">Process</p><h2>Dream to launch.</h2></div><div className="steps"><article><b>01</b><div><h3>Plan</h3><p>Goal, audience and offer.</p></div></article><article><b>02</b><div><h3>Build</h3><p>Design, content and development.</p></div></article><article><b>03</b><div><h3>Launch</h3><p>Go live and improve.</p></div></article></div></section>
